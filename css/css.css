@@ -11,8 +11,9 @@ body {
 }
 
 .container {
-    padding: 0 15px !important;
     margin: auto !important;
+    padding: 0 15px;
+    overflow: hidden;
 }
 
 @media (max-width:676px) {
@@ -39,24 +40,13 @@ body {
     }
 }
 
-.header,
-.footer,
-.features,
-.subscribe,
-.our-work,
-.testim,
-.our-team,
-.contact-form {
-    min-width: 1200px;
-}
-
 
 /*end global*/
 
 
 /*start my framework*/
 
-.clear {
+.clear-fix {
     clear: both;
 }
 
@@ -83,7 +73,6 @@ body {
     right: 0;
     left: 0;
     bottom: 0;
-    width: 100%;
     height: 100%;
     background: rgba(45, 48, 55, .8);
 }
@@ -107,30 +96,38 @@ body {
     background-size: cover;
     overflow: hidden;
     position: relative;
+    height: 100%;
     color: #fff;
 }
 
 .header .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
+    display: flex;
 }
 
 .header .navbar h2 {
-    position: absolute;
-    top: -15px;
-    left: 200px;
     font-size: 40px;
+    flex: 1;
+    display: block;
+    margin-top: 50px;
 }
 
 .header .navbar>span {
+    display: block;
     position: absolute;
-    top: 10px;
-    right: 200px;
-    font-size: 25px;
-    font-weight: bold;
-    padding-top: 10px;
+    right: 50px;
+    top: 55px;
+    font-size: 30px;
+}
+
+@media (max-width:676px) {
+    .header .navbar>span {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 30px;
+    }
 }
 
 .header .navbar>span i {
@@ -138,8 +135,28 @@ body {
 }
 
 .header .intro {
-    margin: 30px 0 50px 0;
+    margin: auto;
+    margin-top: 10%;
     line-height: 1.5;
+}
+
+.header .content-head {
+    position: static;
+}
+
+@media (max-width:676px) {
+    .header .content-head {
+        position: absolute !important;
+        top: 20% !important;
+        left: 15px;
+    }
+}
+
+.header .buttons {
+    margin: auto;
+    margin-top: 90px;
+    text-align: center;
+    width: 100%;
 }
 
 .header .buttons button {
@@ -148,12 +165,12 @@ body {
     background: #3f444a;
     width: 130px;
     height: 40px;
+    display: inline-block;
     line-height: 40px;
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 10px;
     transition: all .6s ease-in-out;
-    margin-right: 20px;
 }
 
 .header .buttons button:hover {
@@ -163,8 +180,11 @@ body {
 
 .header .container>span {
     display: block;
-    margin-top: 190px;
+    margin-top: 110px;
     text-align: center;
+    position: absolute;
+    bottom: 30px;
+    left: 49%;
 }
 
 .header .container>span i {
@@ -197,11 +217,26 @@ body {
 .features .container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .features .container .box {
-    width: 22%;
+    width: 23%;
     text-align: center;
+}
+
+@media (max-width:676px) {
+    .features .container .box {
+        width: 100% !important;
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width:678px)and (max-width:992px) {
+    .features .container .box {
+        width: 50% !important;
+        margin-bottom: 40px;
+    }
 }
 
 .features .container .box i {
@@ -230,6 +265,7 @@ body {
     width: 500px;
     padding: 100px 0;
     margin: auto;
+    text-align: center;
 }
 
 .subscribe form input {
@@ -241,6 +277,14 @@ body {
     color: #777777;
 }
 
+@media (max-width:992px) {
+    .subscribe form input {
+        display: block;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+}
+
 .subscribe form button {
     height: 30px;
     display: inline-block;
@@ -250,6 +294,7 @@ body {
     background: #f7600f;
     border: none;
     cursor: pointer;
+    margin-bottom: 40px;
 }
 
 
@@ -278,6 +323,12 @@ body {
     height: 270px;
     margin-top: 28px;
     position: relative;
+}
+
+@media (max-width:992px) {
+    .our-work .box-item .item {
+        width: 99%;
+    }
 }
 
 .our-work .box-item .item img {
@@ -375,10 +426,13 @@ body {
     color: #777777;
     font-size: 30px;
     cursor: pointer;
+    opacity: 0;
+    transition: all .2s ease;
 }
 
 .testim .cotrols i:hover {
     color: #f7600f;
+    opacity: 1;
 }
 
 .testim .cotrols i:first-child {
@@ -389,6 +443,15 @@ body {
 .testim .cotrols i:last-child {
     right: 120px;
     top: 50%;
+}
+
+@media (max-width:992px) {
+    .testim .cotrols i:first-child {
+        left: 10px;
+    }
+    .testim .cotrols i:last-child {
+        right: 10px;
+    }
 }
 
 
@@ -414,10 +477,18 @@ body {
 }
 
 .our-team .team .imployee {
-    width: 20%;
+    width: 22%;
     cursor: pointer;
     transition: all .7s ease-in-out;
     color: #777777;
+}
+
+@media (max-width:992px) {
+    .our-team .team .imployee {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 70px;
+    }
 }
 
 .our-team .team .imployee h3 {
@@ -469,10 +540,11 @@ body {
 /* start contact-form*/
 
 .contact-form {
-    min-height: 560px;
+    min-height: 600px;
     background: url(../pic/bul.jpg);
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 
 .contact-form .head {
@@ -482,15 +554,40 @@ body {
 }
 
 .contact-form form {
-    width: 615px;
+    width: 80%;
     margin: auto;
+    overflow: hidden;
+    text-align: center;
 }
 
 .contact-form form input {
-    width: 300px;
+    width: 49%;
     border: none;
     border-radius: 10px;
-    padding: 6px 0;
+    padding: 9px 0;
+}
+
+@media (max-width:992px) {
+    .contact-form {
+        min-height: 700px;
+    }
+    .contact-form form input {
+        display: block;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    .contact-form form button {
+        float: none !important;
+        display: inline-block !important;
+        margin: 20px 0 !important;
+    }
+    .contact-form .social {
+        width: 100%;
+        float: none;
+        margin: auto;
+        text-align: center;
+    }
 }
 
 .contact-form form input:first-of-type {

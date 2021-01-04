@@ -26,14 +26,6 @@ $(function() {
     })
 
 
-    $(".header .container").css({
-        "paddingTop": ($(window).height() - $(".header .container").innerHeight()) / 2 + 70 + "px"
-    })
-
-
-    $(".header .navbar").css({
-        left: ($(window).width() - $(".header .navbar").innerWidth()) / 2 + "px"
-    })
 
     //scroll to element //
 
@@ -141,15 +133,11 @@ $("#bar").click(function() {
         menu.animate({
             right: "0"
         })
-        body.animate({
-            paddingRight: $(".menu-bar").innerWidth() + "px"
-        })
+
         $(".menu-bar i").fadeIn()
 
     } else {
-        body.animate({
-            paddingRight: "0"
-        })
+
         menu.animate({
             right: "-" + menu.innerWidth() + "px"
         })
