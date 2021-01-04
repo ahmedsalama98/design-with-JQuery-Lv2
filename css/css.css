@@ -46,10 +46,13 @@ body {
 
 /*start my framework*/
 
+<<<<<<< HEAD
 body {
     background: #fff;
 }
 
+=======
+>>>>>>> 3a56f1b1dcc04473c983492146e33ea8f643f150
 .clear-fix {
     clear: both;
 }
@@ -290,7 +293,13 @@ textarea {
 
 @media (max-width:992px) {
     .subscribe form input {
+<<<<<<< HEAD
         width: 100%;
+=======
+        display: block;
+        margin: auto;
+        margin-bottom: 40px;
+>>>>>>> 3a56f1b1dcc04473c983492146e33ea8f643f150
     }
 }
 
@@ -435,7 +444,11 @@ textarea {
     color: #777777;
     font-size: 30px;
     cursor: pointer;
+<<<<<<< HEAD
     opacity: .8;
+=======
+    opacity: 0;
+>>>>>>> 3a56f1b1dcc04473c983492146e33ea8f643f150
     transition: all .2s ease;
 }
 
